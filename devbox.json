@@ -12,11 +12,23 @@
   ],
   "shell": {
     "init_hook": [
-      "echo 'Welcome to devbox!' > /dev/null"
+      "echo 'Welcome to CppZero development environment!' > /dev/null"
     ],
     "scripts": {
+      "build": [
+        "mkdir -p build && cd build && cmake .. && make -j$(nproc)"
+      ],
       "test": [
-        "echo \"Error: no test specified\" && exit 1"
+        "cd build && ctest --output-on-failure"
+      ],
+      "clean": [
+        "rm -rf build"
+      ],
+      "rebuild": [
+        "devbox run clean && devbox run build"
+      ],
+      "run": [
+        "cd build && ./cppzero_cli"
       ]
     }
   }
