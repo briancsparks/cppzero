@@ -14,7 +14,7 @@ TEST_F(CalcEngineTest, Add) {
   EXPECT_EQ(5, calc_engine.add(2, 3));
   EXPECT_EQ(0, calc_engine.add(0, 0));
   EXPECT_EQ(-1, calc_engine.add(2, -3));
-  EXPECT_EQ(5, calc_engine.get_last_result());
+  EXPECT_EQ(-1, calc_engine.get_last_result());
   EXPECT_TRUE(calc_engine.get_last_error().empty());
 }
 
