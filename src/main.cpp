@@ -63,7 +63,7 @@ int main(int argc, char** argv) {
       std::cerr << "Error: " << calc_engine.get_last_error() << std::endl;
       return 1;
     }
-  } else if (!app.get_subcommands().size() || !calc_cmd->get_subcommands_size()) {
+  } else if (!app.get_subcommands().size() || !calc_cmd->get_subcommands().size()) {
     // No command specified, print help
     std::cout << app.help() << std::endl;
   }
